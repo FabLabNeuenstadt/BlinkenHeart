@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name Soerens_Wunderschalter)(type KiCad)(uri "$(KIPRJMOD)\\Soerens_Wunderschalter.pretty")(options "")(descr ""))
+  (lib (name isp_pogo)(type KiCad)(uri "$(KIPRJMOD)\\isp_pogo.pretty")(options "")(descr ""))
+  (lib (name bb)(type KiCad)(uri "$(KIPRJMOD)\\bb.pretty")(options "")(descr ""))
+)
