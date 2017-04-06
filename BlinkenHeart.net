@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source /home/simon/Data/Electronics/BlinkenHeart/BlinkenHeart.sch)
-    (date "Tue 14 Mar 2017 20:35:19 CET")
+    (source /home/jan/Dokumente/hw/BlinkenHeart/BlinkenHeart.sch)
+    (date "Do 30 Mär 2017 20:32:42 CEST")
     (tool "Eeschema 4.0.6")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -17,12 +17,15 @@
   (components
     (comp (ref IC1)
       (value ATTINY85-S)
-      (footprint SO8-200)
+      (footprint Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm)
       (libsource (lib BlinkenHeart-cache) (part ATTINY85-S))
       (sheetpath (names /) (tstamps /))
       (tstamp 58BB39D5))
     (comp (ref BT1)
       (value "3.3V CR3032")
+      (footprint CR3032-Holder:CR3032-Holder)
+      (fields
+        (field (name Comment) "Footprint ist ein Platzhalter!"))
       (libsource (lib device) (part Battery_Cell))
       (sheetpath (names /) (tstamps /))
       (tstamp 58BB3B7F))
@@ -142,11 +145,16 @@
       (tstamp 58BB9CB1))
     (comp (ref R5)
       (value 4k7)
+      (footprint Resistors_SMD:R_1206)
       (libsource (lib device) (part R))
       (sheetpath (names /) (tstamps /))
       (tstamp 58C897DF))
     (comp (ref C1)
       (value "1 μF")
+      (footprint Capacitors_SMD:C_1206)
+      (fields
+        (field (name Component) C1206C105K3RACTU)
+        (field (name Manufacturer) KEMET))
       (libsource (lib device) (part CP))
       (sheetpath (names /) (tstamps /))
       (tstamp 58C89987)))
@@ -251,7 +259,7 @@
     (library (logical switches)
       (uri /usr/share/kicad/library/switches.lib))
     (library (logical BlinkenHeart-cache)
-      (uri /home/simon/Data/Electronics/BlinkenHeart/BlinkenHeart-cache.lib)))
+      (uri /home/jan/Dokumente/hw/BlinkenHeart/BlinkenHeart-cache.lib)))
   (nets
     (net (code 1) (name "Net-(D4-Pad1)")
       (node (ref D4) (pin 1))
