@@ -4,4 +4,5 @@
   (lib (name bb)(type KiCad)(uri "$(KIPRJMOD)/bb.pretty")(options "")(descr ""))
   (lib (name CR3032-Holder)(type KiCad)(uri "$(KIPRJMOD)/CR3032-Holder.pretty")(options "")(descr ""))
   (lib (name logo)(type KiCad)(uri "$(KIPRJMOD)/logo")(options "")(descr ""))
+  (lib (name single_pad)(type KiCad)(uri "$(KIPRJMOD)/single_pad.pretty")(options "")(descr ""))
 )
