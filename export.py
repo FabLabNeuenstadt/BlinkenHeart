@@ -28,9 +28,9 @@ popt.SetAutoScale(False)
 popt.SetScale(1)
 popt.SetMirror(False)
 popt.SetUseGerberAttributes(True)
-popt.SetExcludeEdgeLayer(False)
+popt.SetExcludeEdgeLayer(True)
 popt.SetScale(1)
-popt.SetUseAuxOrigin(True)
+popt.SetUseAuxOrigin(False)
 popt.SetSubtractMaskFromSilk(False)
 popt.SetUseGerberProtelExtensions(True)
 
@@ -55,7 +55,17 @@ for layer_info in plot_plan:
         pctl.OpenPlotfile(layer_info[0], PLOT_FORMAT_GERBER, layer_info[2])
     pctl.PlotLayer()
 
+#Stop the ploting
 pctl.ClosePlot()
+
+#Open our drill instance
+drill = EXCELLON_WRITER(board)
+#Metric and decimal format
+drill.SetFormat(True, EXCELLON_WRITER.DECIMAL_FORMAT)
+#Merge holes and do not mirror (also, no offset to the board)
+drill.SetOptions(False, False, board.GetPosition(), True)
+#Finlly: Produce the drill file
+drill.CreateDrillandMapFilesSet("export/", True, False)
 
 #Zip everything
 call("zip -j export.zip export/*", shell=True) 
