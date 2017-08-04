@@ -67,5 +67,9 @@ drill.SetOptions(False, False, board.GetPosition(), True)
 #Finlly: Produce the drill file
 drill.CreateDrillandMapFilesSet("export/", True, False)
 
+call("""for f in export/*.gbr; do 
+mv -- \"$f\" \"${f%.gbr}.gko\"
+done""", shell=True)
+
 #Zip everything
 call("zip -j export.zip export/*", shell=True) 
